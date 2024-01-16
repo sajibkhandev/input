@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  let [name,setName]=useState("")
+  let [email,setEmail]=useState("")
+  let [roll,setRoll]=useState("")
+  let [reg,setReg]=useState("")
 
+  let handleSubmit=()=>{
+    console.log(name);
+    console.log(email);
+    console.log(roll);
+    console.log(reg);
+  }
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <input onChange={(e)=>setName(e.target.value)} placeholder='Name' className='border boreder-solid border-black' type="text" />
+      <input onChange={(e)=>setEmail(e.target.value)} placeholder='Email' className='border boreder-solid border-black' type="text" />
+      <input onChange={(e)=>setRoll(e.target.value)} placeholder='Roll' className='border boreder-solid border-black' type="text" />
+      <input onChange={(e)=>setReg(e.target.value)} placeholder='Registration' className='border boreder-solid border-black' type="text" />
+      <button className='bg-blue-400 px-10 py-3 rounded ' onClick={handleSubmit}>Submit</button>
+    </div>
   )
 }
 
